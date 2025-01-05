@@ -2,48 +2,31 @@
 
 import os
 import subprocess
-import shutil
 import zipfile
 
-def download_genomes(accession, output_folder):
+def download_file_type(accession, output_folder, file_type):
+    print(f"Downloading {file_type} for accession: {accession}")
+    command = [
+        "datasets", "download", "genome", "accession", accession,
+        "--include", file_type
+    ]
     try:
-        # Ensure the output folder exists
-        os.makedirs(output_folder, exist_ok=True)
-
-        # Print the accession number being downloaded
-        print(f"Downloading genome for accession: {accession}")
-
-        # Using the NCBI datasets tool to fetch the genome by accession number
-        command = [
-            "datasets", "download", "genome", "accession", accession
-        ]
-
-        # Execute the command to download the genome
         subprocess.run(command, check=True)
-
-        # After downloading, check for the zip file
         downloaded_file = "ncbi_dataset.zip"
         if os.path.exists(downloaded_file):
-            # Extract the contents of the zip file
             with zipfile.ZipFile(downloaded_file, 'r') as zip_ref:
                 zip_ref.extractall(output_folder)
-
-            # Move the downloaded files to the user-specified output folder
-            print(f"Genome for {accession} extracted and saved to {output_folder}")
-
-            # Remove the zip file if it exists after extraction
-            try:
-                os.remove(downloaded_file)
-            except OSError:
-                # Suppress error if the file can't be found or deleted
-                pass
+            print(f"{file_type} for accession {accession} extracted and saved to {output_folder}")
+            os.remove(downloaded_file)
         else:
-            print(f"Error: Genome file for {accession} was not found.")
-
+            print(f"{file_type} for accession {accession} not found or skipped.")
     except subprocess.CalledProcessError as e:
-        print(f"Failed to download genome for {accession}: {e}")
-    except Exception as e:
-        print(f"An error occurred for {accession}: {e}")
+        print(f"Failed to download {file_type} for accession {accession}: {e}")
+
+def download_genomes(accession, output_folder):
+    file_types = ["genome", "rna", "protein", "cds", "gff3", "gtf", "gbff", "seq-report"]
+    for file_type in file_types:
+        download_file_type(accession, output_folder, file_type)
 
 def download_genomes_from_accessions(accessions, output_folder):
     for accession in accessions:
@@ -80,6 +63,7 @@ def main():
         return
 
     output_folder = input("Enter the folder to save downloaded genomes (default: genomes): ").strip() or "genomes"
+    os.makedirs(output_folder, exist_ok=True)
     download_genomes_from_accessions(accessions, output_folder)
 
 if __name__ == "__main__":
