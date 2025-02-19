@@ -124,9 +124,3 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/011/075/055/GCF_011075055.1_CATAS_M
    - **Option 2**: Download genomes from accession numbers.
 
 Based on your choice, the relevant script will run and you can follow the prompts to complete the download.
-
----
-
-## License
-
-This project is open-source and available under the MIT License. See the [LICENSE](LICENSE) file for details.
