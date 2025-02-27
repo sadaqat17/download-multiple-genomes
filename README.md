@@ -108,6 +108,7 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/011/075/055/GCF_011075055.1_CATAS_M
    ```bash
    git clone https://github.com/sadaqat17/genome-downloader.git
    ```
+   If it not working then manually download the .zip file
 
 2. Navigate to the project directory:
    ```bash
