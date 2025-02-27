@@ -66,8 +66,7 @@ To download genomes, you can use **text files** containing a list of URLs or acc
 1. **URLs File (urls.txt)**:
    - Create a file named `urls.txt` where each line contains a **URL** of a genome to download.
    - Example content of `urls.txt`:
-     ```
-(https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/011/075/055/GCF_011075055.1_CATAS_Mindica_2.1/GCF_011075055.1_CATAS_Mindica_2.1_genomic.fna.gz)
+     ```(https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/011/075/055/GCF_011075055.1_CATAS_Mindica_2.1/GCF_011075055.1_CATAS_Mindica_2.1_genomic.fna.gz)
 https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/011/075/055/GCF_011075055.1_CATAS_Mindica_2.1/GCF_011075055.1_CATAS_Mindica_2.1_genomic.gtf.gz
      ```
    
