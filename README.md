@@ -108,19 +108,23 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/011/075/055/GCF_011075055.1_CATAS_M
    ```bash
    git clone https://github.com/sadaqat17/genome-downloader.git
    ```
+1. Clone the repository (Manual doenloading)
+ ```bash
+   If it not working then manually download the .zip file
+   ```
    If it not working then manually download the .zip file
 
-2. Navigate to the project directory:
+3. Navigate to the project directory:
    ```bash
    cd genome-downloader
    ```
 
-3. Run the main script:
+4. Run the main script:
    ```bash
    python3 genome_downloader.py
    ```
 
-4. The script will prompt you to choose between:
+5. The script will prompt you to choose between:
    - **Option 1**: Download genomes from URLs.
    - **Option 2**: Download genomes from accession numbers.
 
