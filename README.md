@@ -110,7 +110,7 @@ https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/011/075/055/GCF_011075055.1_CATAS_M
    ```
 1. Clone the repository (Manual doenloading)
  ```bash
-   If it not working then manually download the .zip file
+   Manually download the .zip file
    ```
    If it not working then manually download the .zip file
 
